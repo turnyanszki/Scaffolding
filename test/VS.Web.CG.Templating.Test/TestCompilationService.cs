@@ -93,10 +93,7 @@ namespace Microsoft.VisualStudio.Web.CodeGeneration.Templating.Test
             var framework = NuGet.Frameworks.FrameworkConstants.CommonFrameworks.NET461.GetShortFolderName();
 #elif NETCOREAPP3_1
             projectPath = projectPath ?? Directory.GetCurrentDirectory();
-            var framework = NuGet.Frameworks.FrameworkConstants.CommonFrameworks.NetCoreApp10.GetShortFolderName();
-#else
-#error target frameworks need to be updated.
-#endif
+            const string framework = "net1.0";
             if (!projectPath.EndsWith(Microsoft.DotNet.ProjectModel.Project.FileName))
             {
                 projectPath = Path.Combine(projectPath, Microsoft.DotNet.ProjectModel.Project.FileName);
