@@ -173,7 +173,7 @@ namespace Microsoft.VisualStudio.Web.CodeGeneration.Msbuild
                     {
                         var dependencyTypeValue = type.ToString();
                         var DependencyTypeEnum = DependencyType.Unknown;
-                        if (Enum.TryParse(typeof(DependencyType), dependencyTypeValue, true, out var dependencyType))
+                        if (Enum.TryParse<DependencyType>(dependencyTypeValue, out var dependencyType))
                         {
                             DependencyTypeEnum = (DependencyType)dependencyType;
                         }
