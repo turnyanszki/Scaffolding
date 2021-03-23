@@ -33,13 +33,17 @@ namespace Microsoft.VisualStudio.Web.CodeGeneration
             _assemblyProvider = assemblyProvider;
         }
 
-        public CodeGeneratorDescriptor GetCodeGenerator(string codeGeneratorName)
+        public CodeGeneratorDescriptor GetCodeGenerator(string codeGeneratorName, ILogger logger = null)
         {
             if (codeGeneratorName == null)
             {
                 throw new ArgumentNullException(nameof(codeGeneratorName));
             }
 
+            foreach (var generator in CodeGenerators)
+            {
+                logger.LogMessage(generator.Name);
+            }
             var candidates = CodeGenerators
                 .Where(gen => string.Equals(gen.Name, codeGeneratorName, StringComparison.OrdinalIgnoreCase));
 

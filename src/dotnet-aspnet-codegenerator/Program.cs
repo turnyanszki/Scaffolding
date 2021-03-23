@@ -233,6 +233,10 @@ namespace Microsoft.VisualStudio.Web.CodeGeneration.Tools
             string dotnetCodeGenInsideManPath = string.Empty;
             if (DotnetToolDispatcher.IsNetCoreAppFramework(tfmMoniker))
             {
+                foreach (var assembly in context.CompilationAssemblies.Select(c=>Path.GetFileNameWithoutExtension(c.Name)))
+                {
+                    Logger.LogMessage(assembly);
+                }
                 dotnetCodeGenInsideManPath = context.CompilationAssemblies
                 .Where(c => Path.GetFileNameWithoutExtension(c.Name)
                             .Equals(DESIGN_TOOL_NAME, StringComparison.OrdinalIgnoreCase))

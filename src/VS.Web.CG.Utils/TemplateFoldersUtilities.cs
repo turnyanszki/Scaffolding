@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.ProjectModel;
 using Microsoft.VisualStudio.Web.CodeGeneration.Utils;
 
@@ -51,7 +52,10 @@ namespace Microsoft.VisualStudio.Web.CodeGeneration
 
                 if (dependency.Type == DependencyType.Project)
                 {
-                    containingProjectPath = Path.GetDirectoryName(dependency.Path);
+                    var projectReferenceInformation = projectContext.ProjectReferenceInformation
+                        .First(x => x.AssemblyName == dependency.Name);
+                    var projectPath = projectReferenceInformation.FullPath.TrimEnd(projectReferenceInformation.ProjectName.ToCharArray());
+                    containingProjectPath = Path.GetDirectoryName(projectPath);
                 }
                 else if (dependency.Type == DependencyType.Package)
                 {

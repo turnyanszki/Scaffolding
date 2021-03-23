@@ -25,4 +25,13 @@
       <NoWarn>KRB4002</NoWarn>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Target\buildMultiTargeting\Microsoft.VisualStudio.Web.CodeGeneration.Tools.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Target\build\Microsoft.VisualStudio.Web.CodeGeneration.Tools.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

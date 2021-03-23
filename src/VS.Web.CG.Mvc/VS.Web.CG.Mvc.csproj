@@ -8,6 +8,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <PackageTags>aspnetcore;aspnetcoremvc;codegenerator;scaffolding;visualstudioweb</PackageTags>
+    <AssemblyOriginatorKeyFile>C:\Users\turny\.nuget\packages\microsoft.dotnet.arcade.sdk\5.0.0-beta.20464.13\tools\snk/AspNetCore.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- This embedded resource is also packaged in order to allow VS to inspect the file. -->
@@ -18,6 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Pack="true" Include="ParameterDefinitions\*" PackagePath="Generators\ParameterDefinitions\" />
+    <None Pack="true" Include="Templates\StoreGenerator\*" PackagePath="Templates\StoreGenerator\" />
     <None Pack="true" Include="Templates\ControllerGenerator\*" PackagePath="Templates\ControllerGenerator\" />
     <None Pack="true" Include="Templates\MvcLayout\*" PackagePath="Templates\MvcLayout\" />
     <None Pack="true" Include="Templates\Startup\*" PackagePath="Templates\Startup\" />

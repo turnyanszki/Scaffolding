@@ -9,6 +9,6 @@ namespace Microsoft.VisualStudio.Web.CodeGeneration
     {
         IEnumerable<CodeGeneratorDescriptor> CodeGenerators { get; }
 
-        CodeGeneratorDescriptor GetCodeGenerator(string codeGeneratorName);
+        CodeGeneratorDescriptor GetCodeGenerator(string codeGeneratorName, ILogger logger = null);
     }
 }

@@ -130,7 +130,7 @@
     <value>Failed to compile the project in memory{0}{1}</value>
   </data>
   <data name="ControllerNameRequired" xml:space="preserve">
-    <value>Controller Name is required</value>
+    <value>Controller Name is required.</value>
   </data>
   <data name="DbContextNeedsToInheritFromIdentityContextMessage" xml:space="preserve">
     <value>DbContext type '{0}' is found but it does not inherit from '{1}'</value>
@@ -248,5 +248,11 @@
   </data>
   <data name="InvalidBootstrapVersionForScaffolding" xml:space="preserve">
     <value>The specified bootstrap version '{0}' is not valid. The valid options are '{1}'.</value>
+  </data>
+  <data name="AddedStore" xml:space="preserve">
+    <value>Added Store: '{0}'.</value>
+  </data>
+  <data name="StoreNameRequired" xml:space="preserve">
+    <value>StoreName is required.</value>
   </data>
 </root>
